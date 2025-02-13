@@ -1,0 +1,171 @@
+body {
+  margin: 0;
+  padding: 20px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+h1 {
+  text-align: center;
+  color: #212529;
+  text-align: center;
+  font-size: 28px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+.mainContainer {
+  display: flex;
+  gap: 32px;
+  justify-content: center;
+}
+
+.mainContainer .signatureForm {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.mainContainer .signatureForm label {
+  color: #212529;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+
+select {
+  min-height: 36px;
+}
+
+input {
+  height: 23px;
+}
+
+select,
+input {
+  margin-top: 6px;
+  padding: 6px 0px;
+  width: 100%;
+  border-radius: 4px;
+  border: 1px solid #ced4da;
+  background: #fff;
+  outline: none;
+  cursor: pointer;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  min-width: 300px;
+}
+
+.phoneIndexInput {
+  display: flex;
+}
+
+.phoneIndexInput .customSelect select {
+  min-width: 70px;
+  background-color: #eff2f7;
+}
+
+.signatureContent {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.details {
+  font-size: 14px;
+  line-height: 1.5;
+  color: #333;
+}
+
+.details .name {
+  color: var(--text-primary, #101828);
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 28px; /* 140% */
+}
+
+.details .position {
+  color: #667085;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px;
+}
+
+.details .mail a {
+  color: #3577f1;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px;
+  text-decoration: none !important;
+}
+.details .phone a {
+  color: #101828;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px;
+  text-decoration: underline;
+}
+.details .address {
+  color: #101828;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px;
+}
+
+.socials a {
+  text-decoration: none !important;
+  margin-right: 5px;
+  color: #3577f1;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px;
+  display: inline-flex;
+  gap: 5px;
+}
+.socials .line {
+  width: 1px;
+  height: 24px;
+  background-color: #ced4da;
+}
+
+.copyButton {
+  cursor: pointer;
+  margin-top: 20px;
+  transition: background 0.3s;
+  width: 100%;
+  border: none;
+  color: #fff;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  border-radius: 4px;
+  background: #299cdb;
+  padding: 8px 12px;
+}
+
+.copyButton:hover {
+  background: #2385ba;
+}
+
+.copyButton.copied {
+  background: #0ab39c;
+}
+@media only screen and (max-width: 950px) {
+  .mainContainer {
+    flex-direction: column;
+  }
+  select,
+  input {
+    min-width: auto;
+  }
+}
