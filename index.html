@@ -19,58 +19,83 @@
             </div>
           </div>
           <div class="form-group">
-            <label for="position">Your full name</label>
+            <label for="fullName">Your full name</label>
             <div>
-              <input type="text" id="position" name="position" required />
+              <input
+                type="text"
+                id="fullName"
+                name="fullName"
+                oninput="displayFullName()"
+              />
             </div>
           </div>
           <div class="form-group">
             <label for="role">Your role</label>
-            <input type="text" id="role" name="role" required />
+            <input
+              type="text"
+              id="role"
+              name="role"
+              oninput="displayRole()"
+              required
+            />
           </div>
           <div class="form-group">
             <label for="email">Your email</label>
-            <input type="email" id="email" name="email" required />
+            <input
+              type="email"
+              id="email"
+              name="email"
+              oninput="displayEmail()"
+              required
+            />
           </div>
           <div class="form-group">
             <label for="phoneIndex">Your phone</label>
             <div class="phoneIndexInput">
               <div class="customSelect">
-                <select id="index" name="index">
+                <select id="index" name="index" oninput="displayPhone()">
                   <option value="+995">+995</option>
                   <option value="+1">+1</option>
                   <option value="+44">+44</option>
                 </select>
               </div>
-              <input type="phone" id="phoneIndex" name="phoneIndex" required />
+              <input
+                type="phone"
+                id="phone"
+                name="phone"
+                oninput="displayPhone()"
+                required
+              />
             </div>
           </div>
         </div>
         <div class="signatureContent">
           <div class="emailSignature" id="emailSignature">
             <div class="details">
-              <div class="name">John Carter</div>
-              <div class="position">Sales manager</div>
+              <div class="name" id="detailsfullName">John Carter</div>
+              <div class="position" id="detailsRole">Sales manager</div>
               <div class="mail">
                 <img
                   src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAASCAYAAABWzo5XAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAFtSURBVHgBzZNPTsJQEMZnXp/BJTew3KC9gS5NrIEDCHYl3dUTgCcgLkxl9ZAL1NQYl+gJkBPYI3QJsY9xWvmjgIEmLviSti+vmd/7ZuYNwL4Js9ederYMY9riZRmKKSGdXntuLUalwvJEHAwJiSE0KkJBEEcEVD7UaUWOJVhIZLK1R9I6p+8CCdSLiSINmWaOQVrix78qCmMQqOhyG6SroioYKWcB1nxvAWKLLqAANFDd96NOlvIqINvr9qIOGRgKgpg0x6yCQGPcrJ9ViOCGs/cnwhgGKjSXqYTHeS0F+nzq7VXDsUHqeB00k9dw2qRl5dud/Og+PLUyF7weAE6B0zlpNhx/NW4NlMPc07ikP+3sZA5sz12UtLa9C+d1U4yEP+S6tYQ/ftCP3gEx9uqbAVtBC3f18x7sIAH/pGX7ZVp0PH4pH5Exd4dvd5LVokgwAU8FUJI1QeRF1dLmzRFfSizyANGb1kZt1pg90xf3KKzmR+15EQAAAABJRU5ErkJggg=="
                   alt="mail"
                 />
-                <a href="mailto:teo.p@cargon.com">teo.p@cargon.com</a>
+                <a href="mailto:teo.p@cargon.com" id="detailsEmail"
+                  >teo.p@cargon.com</a
+                >
               </div>
               <div class="phone">
                 <img
                   src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAASCAYAAABWzo5XAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAADiSURBVHgB7ZO7DcJAEERnDyMRUoI7gEr4NIBwCBFUYKgAiCyiA1GAQQSEUAIluASHRrJvOSQ+tgVnJAg9l+zujZ52gyHkJKVfj4AmzAoGTjdIDyjdLDd7lxkTfCGV8HjotOaP3kp/sqI+iLdMWJggQmFGFXJ1+R6kITazWg967ZMJ5K13O4JwM3D8SSWoBJl0y54nfbvIZxUZLqKyupedn0CsqqMaorDIlw0tEAqItj7l9JpG+ul8Sf85IRIN7Q4+ggRoysQ62dYRRZsmNE33lDd48mDDim0YVIvjs+N0M+deAQk2RZbWb3YPAAAAAElFTkSuQmCC"
                   alt="phone"
                 />
-                <a href="tel:+995123456789">+995 123456789</a>
+                <a href="tel:+995123456789" id="detailsPhone">+995 123456789</a>
               </div>
               <div class="phone">
                 <img
                   src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAASCAYAAABWzo5XAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAFiSURBVHgBzZNNTsMwEIXf2DlAjtAb0N4gXSOF9gL92bWwoSeAG9AuUMoqFA5QFYRY5giEG4QbZIeQYg/jVqGlFJGy6tt4bMuf34zHwKGJymA6W4xB6mi9xemgE45QUWodqSMG6gwWONUY1MMe+gKx5TcC58NOGFjYidD8OJ77+4MIqXPiDpNB7tbePQQVOfDKgIhSSG4fWl/JrCXojAoHrybanEzvHxOBBQ7CxjSH/XaGilLfqAVP3MiGZ/tAfjgqXTGjDlM0/u1o6abw+ssblE6ieF7b3Ivi59pNPG9tr+905HQdP9WVtgkx52xXtXIQUiYB8RIi75JLu9yWTat2gc76x6k1qim2AO29RPHi0kGY2CfitgWPiCmXEjR+TW0TxkY3SfqLtLpwTojtzBYmPe2EYyjO/kxtW9HdQ48gMKzSkmOZfCUfzK/DbhhUBpVytSNtAnK9RvClhumge3KOg9QnIR2aYUeNKaIAAAAASUVORK5CYII="
                   alt="phone"
                 />
-                <a href="tel:598566652">+995 322 560 590</a>
+                <a href="tel:+995 322 560 590">+995 322 560 590</a>
               </div>
               <div class="address">
                 <img
