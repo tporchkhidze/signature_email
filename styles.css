@@ -121,6 +121,10 @@ input {
   line-height: 24px;
   text-decoration: none !important;
 }
+.details .phone img {
+  width: 18px;
+  height: 18px;
+}
 .details .phone a {
   color: #101828;
   font-size: 15px;
@@ -128,6 +132,10 @@ input {
   font-weight: 400;
   line-height: 24px;
   text-decoration: underline;
+}
+.details .address img {
+  width: 18px;
+  height: 18px;
 }
 .details .address {
   color: #101828;
@@ -138,15 +146,17 @@ input {
 }
 
 .socials a {
-  text-decoration: none !important;
-  margin-right: 5px;
   color: #3577f1;
   font-size: 15px;
   font-style: normal;
   font-weight: 400;
   line-height: 24px;
   display: inline-flex;
-  gap: 5px;
+  text-decoration: none;
+}
+
+.socials a img {
+  margin-right: 4px;
 }
 .socials .line {
   width: 1px;
