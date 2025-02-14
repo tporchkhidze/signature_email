@@ -1,6 +1,6 @@
 body {
   margin: 0;
-  padding: 20px;
+  padding: 60px;
   font-family: Arial, Helvetica, sans-serif;
 }
 
@@ -12,11 +12,13 @@ h1 {
   font-style: normal;
   font-weight: 700;
   line-height: normal;
+  margin-bottom: 24px;
 }
 
 .mainContainer {
-  display: flex;
+  display: grid;
   gap: 32px;
+  grid-template-columns: 450px 450px;
   justify-content: center;
 }
 
@@ -34,14 +36,6 @@ h1 {
   line-height: normal;
 }
 
-select {
-  min-height: 36px;
-}
-
-input {
-  height: 23px;
-}
-
 select,
 input {
   margin-top: 6px;
@@ -55,8 +49,6 @@ input {
   font-size: 13px;
   font-style: normal;
   font-weight: 500;
-  line-height: normal;
-  min-width: 300px;
 }
 
 .phoneIndexInput {
@@ -160,12 +152,13 @@ input {
 .copyButton.copied {
   background: #0ab39c;
 }
+
+/* Responsive */
 @media only screen and (max-width: 950px) {
-  .mainContainer {
-    flex-direction: column;
+  body {
+    padding: 30px;
   }
-  select,
-  input {
-    min-width: auto;
+  .mainContainer {
+    grid-template-columns: 1fr;
   }
 }
