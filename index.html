@@ -13,10 +13,12 @@
           <div class="form-group">
             <label for="branch">Select branch</label>
             <div class="customSelect">
-              <select id="branch" name="branch">
-                <option value="georgia">Georgia office</option>
-                <option value="usa">USA office</option>
-                <option value="uk">UK office</option>
+              <select id="branch" name="branch" onchange="updateContent()">
+                <option value="Georgia">Georgia office</option>
+                <option value="Armenia">Armenia office</option>
+                <option value="Kazakhstan">Kazakhstan office</option>
+                <option value="Uzbekistan">Uzbekistan office</option>
+                <option value="Azerbaijan">Azerbaijan office</option>
               </select>
             </div>
           </div>
@@ -27,6 +29,7 @@
                 type="text"
                 id="fullName"
                 name="fullName"
+                placeholder="John Carter"
                 oninput="displayFullName()"
               />
             </div>
@@ -37,8 +40,8 @@
               type="text"
               id="role"
               name="role"
+              placeholder="Sales manager"
               oninput="displayRole()"
-              required
             />
           </div>
           <div class="form-group">
@@ -47,28 +50,19 @@
               type="email"
               id="email"
               name="email"
+              placeholder="jonhcarter@cargon.com"
               oninput="displayEmail()"
-              required
             />
           </div>
           <div class="form-group">
             <label for="phoneIndex">Your phone</label>
-            <div class="phoneIndexInput">
-              <div class="customSelect">
-                <select id="index" name="index" oninput="displayPhone()">
-                  <option value="+995">+995</option>
-                  <option value="+1">+1</option>
-                  <option value="+44">+44</option>
-                </select>
-              </div>
-              <input
-                type="phone"
-                id="phone"
-                name="phone"
-                oninput="displayPhone()"
-                required
-              />
-            </div>
+            <input
+              type="phone"
+              id="phone"
+              name="phone"
+              placeholder="+995123456789"
+              oninput="displayPhone()"
+            />
           </div>
         </div>
         <div class="signatureContent">
@@ -87,8 +81,8 @@
                     />
                   </td>
                   <td style="vertical-align: middle">
-                    <a href="mailto:teo.p@cargon.com" id="detailsEmail"
-                      >teo.p@cargon.com</a
+                    <a href="mailto:jonhcarter@cargon.com" id="detailsEmail"
+                      >jonhcarter@cargon.com</a
                     >
                   </td>
                 </tr>
@@ -117,7 +111,9 @@
                     />
                   </td>
                   <td style="vertical-align: middle">
-                    <a href="tel:+995 322 560 590">+995322560590</a>
+                    <div id="companyPhoneContainer">
+                      <a href="tel:+995 322 560 590">+995322560590</a>
+                    </div>
                   </td>
                 </tr>
                 <tr class="address">
@@ -129,7 +125,7 @@
                       style="display: block"
                     />
                   </td>
-                  <td style="vertical-align: middle">
+                  <td id="address" style="vertical-align: middle">
                     Grato Passage, 37-39 M.Kostava str, Tbilisi, 0179, Georgia
                   </td>
                 </tr>
@@ -144,8 +140,10 @@
                   <tr>
                     <td style="vertical-align: middle; padding-right: 4px">
                       <a
+                        id="facebook"
                         href="https://www.facebook.com/cargon.inc/"
                         style="vertical-align: middle"
+                        target="_blank"
                       >
                         <img
                           src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAIPSURBVHgBtVU9UttAFP7e4glO59xA6VzCCaJkJjPpIp8gcAJMlaGyXGQSkiK+AUqVjlH6ZEbu0gEdVJgbmMrAjLV8u7KMwGtLYPPNrLSzu+97b9/fChbAD8IG8HIH0D5EPC552Y4ModNj/v8AaZzEe4N5HOIm/upx64CkPqpA64ifrkvR2iz5fhuiflN1E1UhssGx5TXfXQ9O//2fq8APfnQg+hundTwedRr2wWu+x+D0b39GQWa5Ja+CE44zjguOS16hjtwogc+bXOY3kYycPpe1I/qxUUJ8zOC2Hvqa8hGt/1RYMkmwac6pidawAvkAevR2UcYU0GBMDix1Zr06LxXR6TbJI9y33MsMlB4/H2dlRq9qgApQCSbvC+QtugX33OLAels5NTuhhlNya3kZOczN3ij6fwPPBvFUheAuA0/81r6eu63T11Wyxm99Nynu9IRJ0wssDT3PzUMT5PIUXQA/+LIghulJjZ2wb8rbfUDazJhJ9lz3kjgcZqQ/GberdnYkb+EOaB2zDl6wSG46bn7ZmXZ0vR7BtACLK1aq6qAUEqsk3qWQJFg1tER3vUiPt+0rtTIYrnHXzKwCm4qiu1gV5O51U/lacvi5R3cvr0TSruWaQBX3uBFSye7T3EUZyiaHe2FxVT08ZrXr8Sanv1AdfSNTtDxHzXV64r8t1kBo27kgcJIKEqSjaX24cAswfsCqLnIdCwAAAABJRU5ErkJggg=="
@@ -156,8 +154,10 @@
                     </td>
                     <td style="vertical-align: middle; padding-right: 4px">
                       <a
+                        id="instagram"
                         href="https://www.instagram.com/cargon_georgia/"
                         style="vertical-align: middle"
+                        target="_blank"
                       >
                         <img
                           src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAKlSURBVHgBpVZLctpAEO2WKDtehZwg8gmCT2BxgghfAHKCwMYk2SAWiQtnYXGClC8Q5BMgnyC+QZQTRFmxQpM3H32MNchlXhWF0PS817/pgakGPwi7RCcfiYRPzB4R47foUjtSEiKF/R1RHifx57RY4Ip8MQbp7JmE+yEoTOLpvBTwg+8z4jw0y/cwiJVXlGf62wYXzmyNQ04PbIiePC2ynSTxl4j94Mojdn4b6WWy+jSmA+APriPwSKGMxOa0A+XArKUvJVfpJRoigihZXY4hcg6RHtHx2EGW3mvnt8t2oitPRbwLpht8ekitdlCIW/2ezzvE4tRYPdhI8YUGcIdFA8BDhJ+jTmKuO4aXKi1Ofme2pYbTQ4roLVk9vpaFW2tiUVvBb+YRCAI/+NqXaVFOlJDN4ciHrkN70lGRyz7P+yjam2Q1ZWgNSHsJoc76adpU9z0RSB/ZMIUV+eYMqUiSOFQb0eMxiaOzUoR4pzmcrHwiK1xTfJoUxHUk8UTW4YN2hoc2lkYBHbIuqPLWildFY3Qbu4v2RlCIhdbRoaJogdO8UbWe2XzcI6v4ojikWX3AtQooiNwcFudHUxTqnTxgypataawJ5DskIjJRoF1PfvnBt6AgRr59+U6tKZvtfIfXqwkUqXAeCaiQBfUrEXflDxYCxH8R1bokh40tPUAGAfGvSUCLXD5gRsl+v60ckZDEYinXlI0dGUYFY1QLjIut12RhvBvJ56IV93hs4JjGyP904Mk9ioWcunKGR/u2tRMb6ItHTtUYKToqi4m2u6EDYTg8oxTrK/MCF4agglwWF+M3r+VWTcemQ2WI5Kl338HzUfmOMWJ+TqPq0r9YhCCe0cFANhj3BMi1Tg26iLhCmQLtCb9u/5ch06s6McW+hPJNVB+O/wE8zRqvkjUKtAAAAABJRU5ErkJggg=="
@@ -168,8 +168,10 @@
                     </td>
                     <td style="vertical-align: middle; padding-right: 4px">
                       <a
+                        id="linkedin"
                         href="https://www.linkedin.com/company/cargon/"
                         style="vertical-align: middle"
+                        target="_blank"
                       >
                         <img
                           src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAFWSURBVHgB7VVBVoMwEP0DbNxxg/YGHqG5gXACnydou9HnCtjYV12oN6gX0N7AeAO9AZ5AVu5InFBqISz6NPC66X8vZGYS5k/CzEAiWs5AlAA6RN/Q5TwA4Z4lDALyEw/DIuwSEDJodcHSE3pA0NI0HuTLVVprKxHfjtgo4AD7BG9twvITjrAI9NlWEtFiDPImcASJeNlOIa0lP3N2HvWRukGXkkTNhD2xFbzHXCHPMIGc7ifQKpPr63Sr8ulynkYmq9i+qmzRQsDzp1DfbEuL372bK31lcdx0+Z86yOXzZdx0bsAB5HV6w4mgcgQTcRqaYa1Jvrp3J4KN87sEdPJlhohuZq1FXX44E4BUulP8c2uxcCKoPmbLH6xU1m4Ef8WR4PAEVrMjyXm8a9nELcE0PMIaStX5TazTtOGj4Ap+bLwzaf5Dut20Z3h2YfRPQDrDIODACfMfeGNxuXST8F4AAAAASUVORK5CYII="
@@ -195,9 +197,10 @@
                     </td>
                     <td style="vertical-align: middle">
                       <a
-                        href="cargon.com"
-                        id="detailsEmail"
+                        href="https://cargon.com"
+                        id="website"
                         style="vertical-align: middle"
+                        target="_blank"
                       >
                         cargon.com</a
                       >
