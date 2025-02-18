@@ -103,10 +103,7 @@ input {
   line-height: 24px;
   text-decoration: none !important;
 }
-.details .phone img {
-  width: 18px;
-  height: 18px;
-}
+
 .details .phone a {
   color: #101828;
   font-size: 15px;
@@ -115,10 +112,7 @@ input {
   line-height: 24px;
   text-decoration: underline;
 }
-.details .address img {
-  width: 18px;
-  height: 18px;
-}
+
 .details .address {
   color: #101828;
   font-size: 15px;
@@ -137,9 +131,6 @@ input {
   text-decoration: none;
 }
 
-.socials a img {
-  margin-right: 4px;
-}
 .socials .line {
   width: 1px;
   height: 24px;
