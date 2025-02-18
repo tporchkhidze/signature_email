@@ -131,12 +131,6 @@ input {
   text-decoration: none;
 }
 
-.socials .line {
-  width: 1px;
-  height: 24px;
-  background-color: #ced4da;
-}
-
 .copyButton {
   cursor: pointer;
   margin-top: 20px;
