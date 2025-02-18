@@ -40,7 +40,7 @@ const contactArray = [
   {
     id: 1,
     name: "Georgia",
-    phone: ["+995322560590"],
+    phone: "+995322560590",
     fb: "https://www.facebook.com/cargon.inc",
     instagram: "https://www.instagram.com/cargon_georgia/",
     linkedin: "https://www.linkedin.com/company/cargon/mycompany/",
@@ -50,12 +50,7 @@ const contactArray = [
   {
     id: 2,
     name: "Armenia",
-    phone: [
-      "00374(10)504040",
-      "00374(43)504080",
-      "00374(43)504070",
-      "00374(33)504080",
-    ],
+    phone: "00374(10)504040",
     fb: "https://www.facebook.com/cargon.armenia",
     instagram: "https://www.instagram.com/cargon.armenia/",
     linkedin: "https://www.linkedin.com/company/cargon/mycompany/",
@@ -65,7 +60,7 @@ const contactArray = [
   {
     id: 3,
     name: "Kazakhstan",
-    phone: ["+7 727 311 00 35"],
+    phone: "+7 727 311 00 35",
     fb: "https://www.facebook.com/profile.php?id=61558754574815",
     instagram: "https://www.instagram.com/cargon_kazakhstan/",
     linkedin: "https://www.linkedin.com/company/cargon/mycompany/",
@@ -75,7 +70,7 @@ const contactArray = [
   {
     id: 4,
     name: "Uzbekistan",
-    phone: ["+998951156667"],
+    phone: "+998951156667",
     fb: "https://www.facebook.com/profile.php?id=61558711827131",
     instagram: "https://www.instagram.com/cargon_uzbekistan/",
     linkedin: "https://www.linkedin.com/company/cargon/mycompany/",
@@ -85,7 +80,7 @@ const contactArray = [
   {
     id: 5,
     name: "Azerbaijan",
-    phone: ["(+994 50) 242 08 88"],
+    phone: "(+994 50) 242 08 88",
     fb: "https://www.facebook.com/profile.php?id=61558545639679",
     instagram: "https://www.instagram.com/cargon_azerbaijan/",
     linkedin: "https://www.linkedin.com/company/cargon/mycompany/",
@@ -104,21 +99,9 @@ function updateContent() {
   const instagramElement = document.getElementById("instagram");
   const linkedinElement = document.getElementById("linkedin");
   const websiteElement = document.getElementById("website");
-  const phoneContainer = document.getElementById("companyPhoneContainer");
-  phoneContainer.innerHTML = "";
+  const companyPhoneElement = document.getElementById("companyPhone");
 
   if (contact) {
-    // Update phones
-    contact.phone.forEach((phone) => {
-      const phoneDiv = document.createElement("div");
-      const phoneLink = document.createElement("a");
-      phoneLink.href = `tel:${phone}`;
-      phoneLink.textContent = phone;
-
-      phoneDiv.appendChild(phoneLink);
-      phoneContainer.appendChild(phoneDiv);
-    });
-
     //update address
     addressElement.textContent = contact.address;
     //update facebook
@@ -129,5 +112,8 @@ function updateContent() {
     linkedinElement.href = contact.linkedin;
     //update web
     websiteElement.href = contact.web;
+    //update company phone
+    companyPhoneElement.textContent = contact.phone;
+    companyPhoneElement.href = `tel:${contact.phone}`;
   }
 }
