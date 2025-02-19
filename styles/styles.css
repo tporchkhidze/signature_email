@@ -39,7 +39,7 @@ h1 {
   margin-top: 4px;
   height: 36px;
 }
-select {
+.customSelect select {
   width: 100%;
   text-indent: 12px;
   border-radius: 4px;
@@ -73,26 +73,21 @@ input {
   width: 480px;
 }
 
-.details {
-  font-size: 14px;
-  line-height: 1.5;
-  color: #333;
-}
-
 .details .name {
-  color: var(--text-primary, #101828);
+  color: #101828;
   font-size: 20px;
   font-style: normal;
   font-weight: 700;
-  line-height: 28px; /* 140% */
+  line-height: 28px;
 }
 
-.details .position {
+.details .role {
   color: #667085;
   font-size: 15px;
   font-style: normal;
   font-weight: 400;
   line-height: 24px;
+  margin-bottom: 16px;
 }
 
 .details .mail a {

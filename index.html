@@ -10,7 +10,7 @@
       <h1>Generate signature</h1>
       <div class="mainContainer">
         <div class="signatureForm">
-          <div class="form-group">
+          <div>
             <label for="branch">Select branch</label>
             <div class="customSelect">
               <select id="branch" name="branch" onchange="updateContent()">
@@ -22,19 +22,17 @@
               </select>
             </div>
           </div>
-          <div class="form-group">
+          <div>
             <label for="fullName">Your full name</label>
-            <div>
-              <input
-                type="text"
-                id="fullName"
-                name="fullName"
-                placeholder="John Carter"
-                oninput="displayFullName()"
-              />
-            </div>
+            <input
+              type="text"
+              id="fullName"
+              name="fullName"
+              placeholder="John Carter"
+              oninput="displayFullName()"
+            />
           </div>
-          <div class="form-group">
+          <div>
             <label for="role">Your role</label>
             <input
               type="text"
@@ -44,7 +42,7 @@
               oninput="displayRole()"
             />
           </div>
-          <div class="form-group">
+          <div>
             <label for="email">Your email</label>
             <input
               type="email"
@@ -54,8 +52,8 @@
               oninput="displayEmail()"
             />
           </div>
-          <div class="form-group">
-            <label for="phoneIndex">Your phone</label>
+          <div>
+            <label for="phone">Your phone</label>
             <input
               type="phone"
               id="phone"
@@ -69,13 +67,7 @@
           <div class="emailSignature" id="emailSignature">
             <div class="details">
               <div class="name" id="detailsfullName">John Carter</div>
-              <p
-                class="position"
-                id="detailsRole"
-                style="margin: 0; margin-bottom: 16px"
-              >
-                Sales manager
-              </p>
+              <p class="role" id="detailsRole">Sales manager</p>
 
               <table style="border-collapse: collapse">
                 <tr class="mail">
@@ -156,7 +148,7 @@
                     <a
                       id="facebook"
                       href="https://www.facebook.com/cargon.inc/"
-                      style="vertical-align: middle; overflow: inherit"
+                      style="vertical-align: middle"
                       target="_blank"
                     >
                       <img
@@ -197,7 +189,7 @@
                     <a
                       id="linkedin"
                       href="https://www.linkedin.com/company/cargon/"
-                      style="vertical-align: middle; overflow: inherit"
+                      style="vertical-align: middle"
                       target="_blank"
                     >
                       <img
@@ -236,11 +228,7 @@
                       alt="web"
                       width="24"
                       height="24"
-                      style="
-                        width: 24px;
-                        vertical-align: middle;
-                        overflow: inherit;
-                      "
+                      style="width: 24px; vertical-align: middle"
                       ;
                     />
                   </td>
@@ -248,10 +236,7 @@
                     <a
                       href="https://cargon.com"
                       id="website"
-                      style="
-                        vertical-align: middle;
-                        text-decoration: none !important;
-                      "
+                      style="vertical-align: middle"
                       target="_blank"
                     >
                       cargon.com</a
